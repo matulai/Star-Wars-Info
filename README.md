@@ -4,8 +4,8 @@ On this proyect you can search for star wars vehicles, persons, add favourites a
 
 ## Technologies
 
--Angular v20
--Sass
+- **Angular v20**
+- **Sass**
 
 ## Development server
 
