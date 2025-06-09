@@ -1,0 +1,11 @@
+@use "../../../globals";
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 700;
+  height: 64px;
+  border-top: 1.5px solid globals.$font-primary-color;
+}
