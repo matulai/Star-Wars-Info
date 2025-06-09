@@ -1,6 +1,7 @@
 .main {
+  display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   flex: 1;
-  gap: 48px;
-  padding: 144px 
+  padding: 48px 144px
 }
