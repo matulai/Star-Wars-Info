@@ -1,0 +1,15 @@
+<header>
+  <h1>
+    <a routerLink="header-title-link">SW</a>
+  </h1>
+  <div>
+    <nav>
+      @for(navLink of navLinks(); track navLink.label) {
+        <a routerLink="navLink.path">{{navLink.label}}</a>
+      }
+    </nav>
+    <button>
+      <img src="icons/settings.svg" alt="settings" />
+    </button>
+  </div>
+</header>
