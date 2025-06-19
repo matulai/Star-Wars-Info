@@ -1,1 +1,4 @@
-export * from "./home/home"
+export * from "./home/home";
+export * from "./films/films";
+export * from "./not-found/not-found";
+export * from "./category/category";
