@@ -1,7 +1,4 @@
-import { Component, inject, Signal } from '@angular/core';
-import { StarWarsService } from '@app/shared'
-import { toSignal } from '@angular/core/rxjs-interop'
-import { Film } from '@app/shared'
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +7,4 @@ import { Film } from '@app/shared'
   styleUrl: './home.scss',
 })
 export class Home {
-  service = inject(StarWarsService);
-  films: Signal<Film[] | undefined> = toSignal(this.service.getFilms());
 }
