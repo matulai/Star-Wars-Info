@@ -14,12 +14,6 @@ header {
     background-color: globals.$font-secondary-color;
     height: fit-content;
     width: fit-content;
-    a {
-      font-size: 48px;
-      font-weight: bold;
-      color: globals.$button-primary-color;
-      cursor: pointer;
-    }
   }
 }
 
@@ -46,4 +40,8 @@ div {
   }
 }
 
-
+.title-logo {
+  height: 48px;
+  width: 96px;
+  filter: drop-shadow(0px 0px 20px #e0c500);
+}

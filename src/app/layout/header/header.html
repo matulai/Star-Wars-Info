@@ -1,11 +1,13 @@
 <header>
   <h1>
-    <a routerLink="header-title-link">SW</a>
+    <a routerLink="/">
+      <img class="title-logo" src="star-wars-title.svg" alt="star-wars-title-logo"/>
+    </a>
   </h1>
   <div>
     <nav>
       @for(navLink of navLinks(); track navLink.label) {
-        <a routerLink="navLink.path">{{navLink.label}}</a>
+        <a [routerLink]="navLink.path">{{navLink.label}}</a>
       }
     </nav>
     <button>
