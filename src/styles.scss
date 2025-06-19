@@ -111,8 +111,6 @@ video {
   color: inherit;
 }
 
-
-
 app-root {
   display: flex;
   flex-direction: column;
@@ -135,4 +133,9 @@ body {
 button {
   cursor: pointer;
   background: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
 }
