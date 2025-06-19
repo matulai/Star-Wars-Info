@@ -1,0 +1,20 @@
+@defer (when cardList().length !== 0) {
+  <section>
+    @for(card of cardList(); track card.url) {
+      <div class="card">
+        <img class="card-image" [src]="card.url" />
+        <div class="card-content">
+          <div class="card-content-title">{{ card.name }}</div>
+          <div class="card-content-interactions">
+            <button class="card-content-interactions-information">
+              Read more
+            </button>
+            <button>
+              <img src="icons/favorite.svg" alt="favourite" />
+            </button>
+          </div>
+        </div>
+      </div>
+    }
+  </section>
+}

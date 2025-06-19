@@ -1,0 +1,48 @@
+@use "../../../../globals";
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+  color: globals.$font-secondary-color;
+  .card {
+    display: flex;
+    flex: 0 0 calc((100% - (48px * 2)) / 3);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    gap:8px;
+    border-radius: 12px;
+    background-color: globals.$opacity-grey;
+    .card-image {
+      width: 100%;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 5rem;
+      width: 100%;
+      .card-content-title {
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .card-content-interactions {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        .card-content-interactions-information {
+          border-radius: 12px;
+          padding: 4px 8px;
+          font-weight: 600;
+          background-color: globals.$button-primary-color;
+        }
+      }
+    }
+  }
+}
