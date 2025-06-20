@@ -1,0 +1,13 @@
+@let element = categoryElement();
+
+<section class="card">
+  <img [src]="element?.imageUrl" class="card__image"/>
+  <section class="card__content">
+    <h2 class="card__title">{{element?.name}}</h2>
+    <section class="card__features">
+      @for(caracteristic of cardCaracteristics(); track $index) {
+        <p class="card__feature"><strong>{{caracteristic[0]}}:</strong> {{caracteristic[1]}}</p>
+      }
+    </section>
+  </section>
+</section>
