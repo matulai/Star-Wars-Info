@@ -1,4 +1,4 @@
-import { Home, Films, Category, NotFound } from '@app/features'
+import { Home, Films, Category, NotFound, CategoryElement } from '@app/features'
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
@@ -33,6 +33,36 @@ export const routes: Routes = [
   {
     path: 'starships',
     component: Category,
+    data: { title: 'starships' }
+  },
+  {
+    path: 'films/:id',
+    component: CategoryElement,
+    data: { title: 'films' }
+  },
+  {
+    path: 'people/:id',
+    component: CategoryElement,
+    data: { title: 'people' }
+  },
+  {
+    path: 'planets/:id',
+    component: CategoryElement,
+    data: { title: 'planets' }
+  },
+    {
+    path: 'species/:id',
+    component: CategoryElement,
+    data: { title: 'species' }
+  },
+  {
+    path: 'vehicles/:id',
+    component: CategoryElement,
+    data: { title: 'vehicles' }
+  },
+  {
+    path: 'starships/:id',
+    component: CategoryElement,
     data: { title: 'starships' }
   },
   {

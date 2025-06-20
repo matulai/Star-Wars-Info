@@ -1,4 +1,4 @@
-import { Component, inject, Signal, input } from '@angular/core';
+import { Component, inject, Signal } from '@angular/core';
 import { StarWarsService } from '@app/shared/services'
 import { ActivatedRoute } from '@angular/router';
 import { GenericModel } from "@app/shared/model";
