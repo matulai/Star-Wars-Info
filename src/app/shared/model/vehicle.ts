@@ -11,6 +11,7 @@ interface Vehicle {
   cargo_capacity: string;
   consumables: string;
   url: string;
+  imageUrl: string,
 }
 
 export default Vehicle;

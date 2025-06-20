@@ -13,6 +13,7 @@ interface Starship {
   cargo_capacity: string;
   consumables: string;
   url: string;
+  imageUrl: string,
 }
 
 export default Starship;

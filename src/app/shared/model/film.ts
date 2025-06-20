@@ -5,6 +5,7 @@ interface Film {
   opening_crawl: string;
   release_date: Date;
   url: string;
+  imageUrl: string;
 }
 
 export default Film;

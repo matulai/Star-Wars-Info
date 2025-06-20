@@ -10,6 +10,7 @@ interface Specie {
   language: string;
   homeworld: string;
   url: string;
+  imageUrl: string,
 }
 
 export default Specie;

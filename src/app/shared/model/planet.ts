@@ -9,6 +9,7 @@ interface Planet {
   terrain: string;
   surface_water: string;
   url: string,
+  imageUrl: string,
 }
 
 export default Planet;
