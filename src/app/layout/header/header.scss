@@ -17,11 +17,11 @@ header {
   }
 }
 
-div {
+.toolbar {
   display: flex;
   align-items: center;
   gap: 16px;
-  nav {
+  &__nav {
     display: flex;
     gap: 16px;
     a {
@@ -30,12 +30,12 @@ div {
       font-weight: 600;
       border-radius: 8px;
       cursor: pointer;
+      &:hover {
+        background-color: globals.$button-opacity-hover-color;
     }
-    a:hover {
-      background-color: globals.$button-opacity-hover-color;
     }
   }
-  button {
+  &__button {
     background-color: transparent;
   }
 }
