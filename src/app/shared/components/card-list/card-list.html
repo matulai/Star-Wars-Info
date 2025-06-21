@@ -1,12 +1,12 @@
 @defer (when cardList().length !== 0) {
-  <section>
+  <section class="card-list">
     @for(card of cardList(); track card.url) {
       <div class="card">
-        <img class="card-image" [src]="card.imageUrl" />
-        <div class="card-content">
-          <div class="card-content-title">{{ card.name }}</div>
-          <div class="card-content-interactions">
-            <button (click)="handleOnClickReadMore(card.url)" class="card-content-interactions-information">
+        <img class="card__image" [src]="card.imageUrl" />
+        <div class="card__content">
+          <div class="card__content-title">{{ card.name }}</div>
+          <div class="card__content-interactions">
+            <button (click)="handleOnClickReadMore(card.url)" class="card__content-interactions-info">
               Read more
             </button>
             <button>
