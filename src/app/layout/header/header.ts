@@ -1,20 +1,11 @@
-import { Component, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component } from '@angular/core';
+import { Navbar, Menu } from "@app/shared/components";
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink],
+  imports: [Navbar, Menu],
   templateUrl: './header.html',
   styleUrl: './header.scss'
 })
 export class Header {
-  navLinks = signal([
-    {label: "Films", path: "/films"},
-    {label: "People", path: "/people"},
-    {label: "Planets", path: "/planets"},
-    {label: "Species", path: "/species"},
-    {label: "Vehicles", path: "/vehicles"},
-    {label: "Starships", path: "/starships"}
-  ])
-
 }

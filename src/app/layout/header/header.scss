@@ -2,6 +2,7 @@
 
 header {
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: space-between;
   padding: 0 36px;
@@ -17,31 +18,21 @@ header {
   }
 }
 
-.toolbar {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  &__nav {
-    display: flex;
-    gap: 16px;
-    a {
-      padding: 8px;
-      font-size: 32px;
-      font-weight: 600;
-      border-radius: 8px;
-      cursor: pointer;
-      &:hover {
-        background-color: globals.$button-opacity-hover-color;
-    }
-    }
-  }
-  &__button {
-    background-color: transparent;
-  }
-}
-
 .title-logo {
   height: 48px;
   width: 96px;
   filter: drop-shadow(0px 0px 20px #e0c500);
+}
+
+@media(max-width: 1024px) {
+  .navbar-render {
+    display: none;
+  }
+
+}
+
+@media(min-width: 1024px) {
+  .menu-render {
+    display: none;
+  }
 }

@@ -1,19 +1,13 @@
 <header>
+  <div class="menu-render">
+    <app-menu/>
+  </div>
   <h1>
     <a routerLink="/">
       <img class="title-logo" src="star-wars-title.svg" alt="star-wars-title-logo"/>
     </a>
   </h1>
-
-  <div class="toolbar">
-    <nav class="toolbar__nav">
-      @for(navLink of navLinks(); track navLink.label) {
-        <a [routerLink]="navLink.path">{{navLink.label}}</a>
-      }
-    </nav>
-
-    <button class="toolbar__button">
-      <img src="icons/settings.svg" alt="settings" />
-    </button>
+  <div class="navbar-render">
+    <app-navbar/>
   </div>
 </header>
