@@ -11,7 +11,7 @@ import { toSignal } from '@angular/core/rxjs-interop'
   styleUrl: './category-element.scss'
 })
 export class CategoryElement {
-  pageTitle!: 'films' | 'people' | 'planet' | 'specie' | 'starship' | 'vehicle';
+  pageTitle!: 'films' | 'people' | 'planets' | 'species' | 'starships' | 'vehicles';
   categoryElementId = signal("")
   categoryElement!: Signal<GenericModel | undefined>;
 
