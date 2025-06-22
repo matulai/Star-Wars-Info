@@ -1,0 +1,5 @@
+<nav class="navbar">
+  @for(navLink of navLinks; track navLink.label) {
+    <a [routerLink]="navLink.path">{{navLink.label}}</a>
+  }
+</nav>
