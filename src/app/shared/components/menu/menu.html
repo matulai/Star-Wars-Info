@@ -1,0 +1,14 @@
+<section class="menu">
+  <button (click)="toggleMenu()" class="menu__interaction">
+    <span class="menu__interaction-line"></span>
+    <span class="menu__interaction-line"></span>
+    <span class="menu__interaction-line"></span>
+  </button>
+
+  <section class="menu__navigation" [style.transform]="isMenuOpen() ? 'translateX(0)' : 'translateX(-100%)'">
+    <button (click)="toggleMenu()" class="menu__interaction">
+      <
+    </button>
+    <app-navbar/>
+  </section>
+</section>

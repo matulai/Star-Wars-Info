@@ -1,0 +1,32 @@
+@use "../../../../globals";
+
+.menu {
+  &__interaction {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0px 8px;
+    border: 1.5px solid globals.$font-primary-color;
+    height: 40px;
+    width: 48px;
+    background: none;
+    &-line {
+      height: 5px;
+      background: globals.$font-primary-color;
+    }
+  }
+  &__navigation {
+    height: 100dvh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
+    top: 0px;
+    left: 0px;
+    padding: 48px;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    transition: transform .2s ease;
+  }
+}
