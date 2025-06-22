@@ -14,7 +14,6 @@ export class CardList {
 
   handleOnClickReadMore(url:string) {
     let slicedUrl = url.slice(23).split("/");
-    console.log(slicedUrl);
     this.router.navigateByUrl(`${slicedUrl[0]}/${slicedUrl[1]}`)
   }
 }
