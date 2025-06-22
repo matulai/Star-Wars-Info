@@ -27,7 +27,7 @@ export class StarWarsService {
     );
   }
 
-  getById<T>(endpoint: 'films' | 'people' | 'planet' | 'specie' | 'starship' | 'vehicle', id: string): Observable<GenericModel> {
+  getById(endpoint: 'films' | 'people' | 'planets' | 'species' | 'starships' | 'vehicles', id: string): Observable<GenericModel> {
     return this.http.get<any>(`${this.baseUrl}/${endpoint}/${id}`).pipe(
       map(item => this.mappers[endpoint](item))
     );
@@ -56,7 +56,7 @@ export class StarWarsService {
       imageUrl: this.madeUrlImage(item.url),
       url: item.url,
     }),
-    planet: (item: Planet): Planet => ({
+    planets: (item: Planet): Planet => ({
       name: item.name,
       diameter: item.diameter,
       rotation_period: item.rotation_period,
@@ -69,7 +69,7 @@ export class StarWarsService {
       imageUrl: this.madeUrlImage(item.url),
       url: item.url,
     }),
-    specie: (item: Specie): Specie => ({
+    species: (item: Specie): Specie => ({
       name: item.name,
       classification: item.classification,
       designation: item.designation,
@@ -83,16 +83,16 @@ export class StarWarsService {
       imageUrl: this.madeUrlImage(item.url),
       url: item.url,
     }),
-    starship: (item: Starship): Starship => ({
+    starships: (item: Starship): Starship => ({
       name: item.name,
       model: item.model,
       starship_class: item.starship_class,
       manufacturer: item.manufacturer,
-      const_in_credits: item.const_in_credits,
+      cost_in_credits: item.cost_in_credits,
       length: item.length,
       crew: item.crew,
       passengers: item.passengers,
-      max_atmospheting_speed: item.max_atmospheting_speed,
+      max_atmosphering_speed: item.max_atmosphering_speed,
       hyperdrive_rating: item.hyperdrive_rating,
       MGLT: item.MGLT,
       cargo_capacity: item.cargo_capacity,
@@ -100,7 +100,7 @@ export class StarWarsService {
       imageUrl: this.madeUrlImage(item.url),
       url: item.url,
     }),
-    vehicle: (item: Vehicle): Vehicle => ({
+    vehicles: (item: Vehicle): Vehicle => ({
       name: item.name,
       model: item.model,
       vehicle_class: item.vehicle_class,
