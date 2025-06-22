@@ -1,7 +1,13 @@
-.main {
+main {
+  flex: 1;
+  padding: 48px 64px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  flex: 1;
-  padding: 48px 144px
+}
+
+@media(min-width: 1024px) {
+  main {
+    padding: 48px 144px;
+  }
 }

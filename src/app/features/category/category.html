@@ -1,3 +1,4 @@
-@let list = genericModels() ?? [];
+@let listPaginated = paginatedList() ?? {list: [], pagination: {actualPage: 1, hasNext: false,hasPrev: false,totalPages: 0, size: 0}};
 
-<app-card-list [cardList]="list"/>
+<app-card-list [cardList]="listPaginated.list"/>
+<app-pagination [paginateInput]="listPaginated"  />
