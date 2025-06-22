@@ -1,0 +1,15 @@
+<section>
+  <button>
+    <
+  </button>
+  @for(itemNumber of [1,2,3,4,5]; track $index) {
+    @if(havePageFor(itemNumber)) {
+      <button>
+        {{itemNumber}}
+      </button>
+    }
+  }
+  <button>
+    >
+  </button>
+</section>
