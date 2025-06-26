@@ -1,15 +1,31 @@
-<section>
-  <button>
-    <
-  </button>
-  @for(itemNumber of [1,2,3,4,5]; track $index) {
-    @if(havePageFor(itemNumber)) {
-      <button>
-        {{itemNumber}}
-      </button>
-    }
+@let pagination = paginateInput().pagination;
+
+<section class="pagination">
+  @if(pagination.hasPrev) {
+    <button (click)="onClickPrevPagesSection()">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16.5 25.5L9 18L16.5 10.5M27 25.5L19.5 18L27 10.5"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+      </svg>
+    </button>
   }
-  <button>
-    >
-  </button>
+  @for(pageNumber of pagesToShow(); track $index) {
+    <button [class]="pagination.actualPage === pageNumber? 'active-button': '' " (click)="onClickSetActualPage(pageNumber)">
+      {{pageNumber}}
+    </button>
+  }
+  @if(pagination.hasNext) {
+    <button (click)="onClickNextPagesSection()">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19.5 25.5L27 18L19.5 10.5M9 25.5L16.5 18L9 10.5"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+      </svg>
+    </button>
+  }
 </section>

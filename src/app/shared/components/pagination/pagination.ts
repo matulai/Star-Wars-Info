@@ -1,5 +1,5 @@
-import { Component, input, signal, effect, model } from '@angular/core';
-import { GenericModel, PaginatedElement } from "@app/shared/model";
+import { Component, computed, model } from '@angular/core';
+import { PaginatedElement } from "@app/shared/model";
 
 @Component({
   selector: 'app-pagination',
@@ -9,27 +9,50 @@ import { GenericModel, PaginatedElement } from "@app/shared/model";
 })
 export class Pagination {
   paginateInput = model.required<PaginatedElement>();
+  pagesToShow = computed(() => {
+    let current = this.paginateInput();
+    let pagesNumbers = current.pagination.hasNext ?
+      5 :
+      5 - (Math.ceil(current.pagination.actualPage / 5) * 5 - current.pagination.totalPages);
+    let fromPage = current.pagination.hasPrev ? Math.floor(current.pagination.actualPage / 5) * 5 + 1: 1;
+    return Array.from({ length: pagesNumbers}, ((_, i) => fromPage + i));
+  });
 
-  onClickNextPage() {
-    this.paginateInput.update(
-      pag =>
-        (
-          {...pag, actualPage: pag.pagination.actualPage + 1, hasPrev: true, hasNext: pag.pagination.actualPage < pag.pagination.totalPages}
-        )
-      );
+  onClickNextPagesSection() {
+    const current = this.paginateInput();
+    this.paginateInput.set({
+      ...current,
+      pagination: {
+        ...current.pagination,
+        actualPage: Math.ceil(current.pagination.actualPage / 5) * 5 + 1,
+        hasPrev: true,
+        hasNext: (Math.ceil(current.pagination.actualPage / 5) * 5 + 5) < current.pagination.totalPages,
+      }
+    });
   }
 
-  onClickPrevPage() {
-    this.paginateInput.update(
-      pag =>
-        (
-          {...pag, actualPage: pag.pagination.actualPage - 1, hasPrev: pag.pagination.actualPage > 1, hasNext: true}
-        )
-      );
+  onClickPrevPagesSection() {
+    const current = this.paginateInput();
+    this.paginateInput.set({
+      ...current,
+      pagination: {
+        ...current.pagination,
+        actualPage: Math.floor(current.pagination.actualPage / 5) * 5,
+        hasPrev: (Math.floor(current.pagination.actualPage / 5) * 5 - 5) > 0,
+        hasNext: true,
+      }
+    });
   }
 
-  havePageFor(pageNumber: number): boolean {
-    return (this.paginateInput().pagination.actualPage + pageNumber) <= this.paginateInput().pagination.totalPages;
+  onClickSetActualPage(page: number) {
+    const current = this.paginateInput();
+    this.paginateInput.set({
+      ...current,
+      pagination: {
+        ...current.pagination,
+        actualPage: page
+      }
+    });
   }
 
 }

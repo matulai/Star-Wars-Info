@@ -1,4 +1,4 @@
-import { Component, inject, Signal, signal, computed, WritableSignal } from '@angular/core';
+import { Component, inject, Signal, signal, computed } from '@angular/core';
 import { GenericModel, PaginatedElement } from "@app/shared/model";
 import { CardList, Pagination } from "@app/shared/components";
 import { StarWarsService } from '@app/shared/services'
@@ -13,13 +13,10 @@ import { ActivatedRoute } from '@angular/router';
 export class Category {
   pageTitle: string = '';
   service = inject(StarWarsService);
-  paginatedList: WritableSignal<PaginatedElement | undefined> = signal<PaginatedElement | undefined>(undefined);
+  paginatedList = signal<PaginatedElement>({list: [], pagination: {actualPage: 1, hasNext: false,hasPrev: false,totalPages: 0, size: 0}});
   actualListPaginate: Signal<GenericModel[]> = computed(() => {
-    const paginated = this.paginatedList();
-    console.log(paginated);
-    return paginated ? this.madeListFromPagination(paginated) : [];
+    return this.madeListFromPagination(this.paginatedList());
   });
-
 
   constructor(private route: ActivatedRoute) {
     this.route.data.subscribe(data => {
@@ -31,12 +28,12 @@ export class Category {
   }
 
   madePaginationFromList(list: GenericModel[], size: number): PaginatedElement {
-    let pages = Math.floor(list.length / size);
+    let pages = Math.ceil(list.length / size);
     return {
       list: list,
       pagination:{
         actualPage: 1,
-        hasNext: pages > 1,
+        hasNext: pages > 5,
         hasPrev: false,
         totalPages: pages,
         size: size
