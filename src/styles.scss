@@ -119,15 +119,25 @@ app-root {
 }
 
 body {
+  position: relative;
   color: globals.$font-primary-color;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+}
 
-  background-size: cover;
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background-image: url("/galaxy-background.webp");
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: fixed;
-
-  font-family: 'Inter', sans-serif;
+  z-index: -1;
 }
 
 button {

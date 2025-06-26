@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "baseHref": "/Star-Wars-Info",
+            "baseHref": "/",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
