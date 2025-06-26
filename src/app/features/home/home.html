@@ -1,3 +1,28 @@
-<section>
-  HOME
+<section class="home">
+  <h1 class="home__title">Star Wars Explorer</h1>
+  <p class="home__subtitle">Explore the galaxy with official Star Wars data</p>
+
+  <section class="home__section">
+    <h2 class="home__section-title">Available Sections:</h2>
+    <ul class="home__list">
+      <li class="home__list-item"><a [routerLink]="['/films']" class="home__link">Films</a> – Browse through the saga's movies</li>
+      <li class="home__list-item"><a [routerLink]="['/people']" class="home__link">Characters</a> – View all characters in the universe</li>
+      <li class="home__list-item"><a [routerLink]="['/planets']" class="home__link">Planets</a> – Discover iconic worlds</li>
+      <li class="home__list-item"><a [routerLink]="['/species']" class="home__link">Species</a> – Learn about races and species</li>
+      <li class="home__list-item"><a [routerLink]="['/vehicles']" class="home__link">Vehicles</a> – Explore vehicles from Star Wars</li>
+      <li class="home__list-item"><a [routerLink]="['/starships']" class="home__link">Starships</a> – Explore ships from Star Wars</li>
+    </ul>
+  </section>
+
+  <section class="home__section">
+    <h2 class="home__section-title">Statistics:</h2>
+    <ul class="home__list">
+      <li>Total films: 6</li>
+      <li>Total people: 83</li>
+      <li>Total planets: 60</li>
+      <li>Total species: 37</li>
+      <li>Total vehicles: 76</li>
+      <li>Total starships: 75</li>
+    </ul>
+  </section>
 </section>
